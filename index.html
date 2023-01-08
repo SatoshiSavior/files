@@ -1,29 +1,56 @@
 <style>
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+  body {
+    background-color: black;
+    color: green;
+    font-family: monospace;
+    white-space: pre;
+  }
 
-li {
-  margin: 10px 0;
-}
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 
-a {
-  color: #333;
-  text-decoration: none;
-  font-size: 25px;
-}
+  li {
+    margin: 10px 0;
+  }
 
-a:hover {
-  color: #0075ff;
-}
+  a {
+    color: #333;
+    text-decoration: none;
+    font-size: 25px;
+  }
+
+  a:hover {
+    color: #0075ff;
+  }
+
+  .cursor {
+    background-color: green;
+    color: black;
+    animation: cursor 1s infinite;
+  }
+
+  @keyframes cursor {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 </style>
 
 <ul>
   <li><a href="//file.skynetmed.com/11061B-Manual.pdf">File 1</a></li>
-  <li><a href="//file.skynetmed.com/Parts_Schematic_-_RLAB8BGBL.pdf
-RLAB8BL_RLAB8BG_Bariatric_Rollator_HangTag_00.pdf">File 2</a></li>
-  <li><a href="//file.skynetmed.com/parts_schematic_11061B_2.pdf
-">File 3</a></li>
+  <li><a href="//file.skynetmed.com/Parts_Schematic_-_RLAB8BGBL.pdf">File 2</a></li>
+  <li><a href="//file.skynetmed.com/parts_schematic_11061B_2.pdf">File 3</a></li>
+  <li><a href="//file.skynetmed.com/RLAB8BL_RLAB8BG_Bariatric_Rollator_HangTag_00.pdf">File 4</a></li>
 </ul>
+
+<span class="cursor">_</span>
+
