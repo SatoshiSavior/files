@@ -52,6 +52,8 @@ canvas {display: block;}
 </style>
 
 <script>
+  var canvas = document.getElementById('myCanvas'),
+    ctx = canvas.getContext('2d');
   // Initialising the canvas
 var canvas = document.querySelector('canvas'),
     ctx = canvas.getContext('2d');
@@ -111,8 +113,6 @@ setInterval(draw, 33);
 </div>
 
 <div style="position: absolute; top: 0; right: 0; width: 50%; height: 100%;">
-  <canvas>
-    <div></div>
-  </canvas>
+  <canvas id="myCanvas"></canvas>
 </div>
 
