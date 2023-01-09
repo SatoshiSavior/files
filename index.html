@@ -46,96 +46,54 @@ a:hover {
 </style>
 
 <style>
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes disappear {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.chars {
-  position: absolute;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.chars span {
-  position: absolute;
-  left: 50%;
-  top: calc(50% - 20px);
-  font-size: 20px;
-  color: green;
-  animation: appear 1s, disappear 1s;
-  animation-delay: 0s;
-  animation-iteration-count: infinite;
-}
-
-.chars span:nth-child(2n) {
-  left: calc(50% + 20px);
-  top: calc(50% - 40px);
-  animation-delay: 0.5s;
-}
-
-.chars span:nth-child(3n) {
-  left: calc(50% + 40px);
-  top: calc(50% - 60px);
-  animation-delay: 1s;
-}
-
-.chars span:nth-child(4n) {
-  left: calc(50% + 60px);
-  top: calc(50% - 80px);
-  animation-delay: 1.5s;
-}
-
-.chars span:nth-child(5n) {
-  left: calc(50% + 80px);
-  top: calc(50% - 100px);
-  animation-delay: 2s;
-}
+  * {margin: 0; padding: 0}
+body {background: #000;}
+canvas {display: block;}
 </style>
-<div class="rain">
-  <span>a</span>
-  <span>b</span>
-  <span>c</span>
-  <span>d</span>
-  <span>e</span>
-  <span>f</span>
-  <span>g</span>
-  <span>h</span>
-  <span>i</span>
-  <span>j</span>
-  <span>k</span>
-  <span>l</span>
-  <span>m</span>
-  <span>n</span>
-  <span>o</span>
-  <span>p</span>
-  <span>q</span>
-  <span>r</span>
-  <span>s</span>
-  <span>t</span>
-  <span>u</span>
-  <span>v</span>
-  <span>w</span>
-  <span>x</span>
-  <span>y</span>
-  <span>z</span>
-</div>
 
+<script>
+  // Initialising the canvas
+var canvas = document.querySelector('canvas'),
+    ctx = canvas.getContext('2d');
+
+// Setting the width and height of the canvas
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Setting up the letters
+var letters = 'ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ';
+letters = letters.split('');
+
+// Setting up the columns
+var fontSize = 10,
+    columns = canvas.width / fontSize;
+
+// Setting up the drops
+var drops = [];
+for (var i = 0; i < columns; i++) {
+  drops[i] = 1;
+}
+
+// Setting up the draw function
+function draw() {
+  ctx.fillStyle = 'rgba(0, 0, 0, .1)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  for (var i = 0; i < drops.length; i++) {
+    var text = letters[Math.floor(Math.random() * letters.length)];
+    ctx.fillStyle = '#0f0';
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    drops[i]++;
+    if (drops[i] * fontSize > canvas.height && Math.random() > .95) {
+      drops[i] = 0;
+    }
+  }
+}
+
+// Loop the animation
+setInterval(draw, 33);
+</script>
+
+<canvas>
 
 <ul>
   <li><a href="//file.skynetmed.com/11061B-Manual.pdf">File 1</a></li>
@@ -146,3 +104,4 @@ a:hover {
 
 <span class="cursor">_</span>
 
+</canvas> 
