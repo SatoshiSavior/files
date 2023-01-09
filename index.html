@@ -46,16 +46,25 @@ a:hover {
 </style>
 
 <style>
-@keyframes rain {
+@keyframes appear {
   0% {
-    top: 0;
+    opacity: 0;
   }
   100% {
-    top: 100%;
+    opacity: 1;
   }
 }
 
-.rain {
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.chars {
   position: absolute;
   right: 0;
   width: 50%;
@@ -63,40 +72,32 @@ a:hover {
   overflow: hidden;
 }
 
-.rain::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 1px;
-  height: 100%;
-  background-color: green;
-  animation: rain 10s linear infinite;
-}
-
-.rain span {
+.chars span {
   position: absolute;
   left: 50%;
   font-size: 20px;
   color: green;
-  animation: rain 10s linear infinite;
+  animation: appear 1s, disappear 1s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
 }
 
-.rain span:nth-child(2n) {
+.chars span:nth-child(2n) {
   left: calc(50% + 20px);
   animation-delay: 0.5s;
 }
 
-.rain span:nth-child(3n) {
+.chars span:nth-child(3n) {
   left: calc(50% + 40px);
   animation-delay: 1s;
 }
 
-.rain span:nth-child(4n) {
+.chars span:nth-child(4n) {
   left: calc(50% + 60px);
   animation-delay: 1.5s;
 }
 
-.rain span:nth-child(5n) {
+.chars span:nth-child(5n) {
   left: calc(50% + 80px);
   animation-delay: 2s;
 }
