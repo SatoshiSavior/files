@@ -1,9 +1,14 @@
+<canvas>
 <style>
   body {
   background-color: black;
   color: green;
   font-family: monospace;
   white-space: pre;
+}
+  .list-container {
+  background-color: black;
+  z-index: 999;
 }
 
 ul {
@@ -93,15 +98,14 @@ function draw() {
 setInterval(draw, 33);
 </script>
 
+<list-container>
 <ul>
   <li><a href="//file.skynetmed.com/11061B-Manual.pdf">File 1</a></li>
   <li><a href="//file.skynetmed.com/Parts_Schematic_-_RLAB8BGBL.pdf">File 2</a></li>
   <li><a href="//file.skynetmed.com/parts_schematic_11061B_2.pdf">File 3</a></li>
   <li><a href="//file.skynetmed.com/RLAB8BL_RLAB8BG_Bariatric_Rollator_HangTag_00.pdf">File 4</a></li>
 </ul>
-
+<list-container>
 <span class="cursor">_</span>
 
-<canvas>
-...
 </canvas> 
