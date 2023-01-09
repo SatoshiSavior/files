@@ -75,6 +75,7 @@ a:hover {
 .chars span {
   position: absolute;
   left: 50%;
+  top: calc(50% - 20px);
   font-size: 20px;
   color: green;
   animation: appear 1s, disappear 1s;
@@ -84,21 +85,25 @@ a:hover {
 
 .chars span:nth-child(2n) {
   left: calc(50% + 20px);
+  top: calc(50% - 40px);
   animation-delay: 0.5s;
 }
 
 .chars span:nth-child(3n) {
   left: calc(50% + 40px);
+  top: calc(50% - 60px);
   animation-delay: 1s;
 }
 
 .chars span:nth-child(4n) {
   left: calc(50% + 60px);
+  top: calc(50% - 80px);
   animation-delay: 1.5s;
 }
 
 .chars span:nth-child(5n) {
   left: calc(50% + 80px);
+  top: calc(50% - 100px);
   animation-delay: 2s;
 }
 </style>
