@@ -44,6 +44,71 @@ a:hover {
   }
 }
 </style>
+<style>
+@keyframes rain {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.rain {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.rain::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background-color: green;
+  animation: rain 10s linear infinite;
+}
+
+.rain span {
+  position: absolute;
+  left: 50%;
+  font-size: 20px;
+  color: green;
+  animation: rain 10s linear infinite;
+}
+</style>
+<div class="rain">
+  <span>a</span>
+  <span>b</span>
+  <span>c</span>
+  <span>d</span>
+  <span>e</span>
+  <span>f</span>
+  <span>g</span>
+  <span>h</span>
+  <span>i</span>
+  <span>j</span>
+  <span>k</span>
+  <span>l</span>
+  <span>m</span>
+  <span>n</span>
+  <span>o</span>
+  <span>p</span>
+  <span>q</span>
+  <span>r</span>
+  <span>s</span>
+  <span>t</span>
+  <span>u</span>
+  <span>v</span>
+  <span>w</span>
+  <span>x</span>
+  <span>y</span>
+  <span>z</span>
+</div>
+
 
 <ul>
   <li><a href="//file.skynetmed.com/11061B-Manual.pdf">File 1</a></li>
